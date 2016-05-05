@@ -9,6 +9,6 @@
 
 `someFunc(); // {index: 0, animate: false}`
 
-`someFunc({index: 20}); {index: 20, animate: false}`
+`someFunc({index: 20}); // {index: 20, animate: false}`
 
 `someFunc({index: 1, animate: true}); // {index: 1, animate: true}`
