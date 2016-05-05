@@ -1,12 +1,3 @@
-/*
-http://jscourse.com/task/summ-all-arguments
-
-Реализуй функцию sum(), которая суммирует все передаваемые ей аргументы.
-В аргументах могут быть любые данные.
-Пример работы:
-sum(10, 20); // 30
-*/
-
 function sum() {
 	var reduceFn = Array.prototype.reduce;
 	var args = Array.prototype.slice.call(arguments, 0);
