@@ -1,6 +1,6 @@
 function extractOddItems(arr) {
 	var filterFn = Array.prototype.filter;
-	var handler = filterFn &&	filterFn.toString().indexOf('native') >= 0 ?
+	var handler = filterFn && filterFn.toString().indexOf('native') >= 0 ?
 		function() {
 			return arr.filter(function(elem, index) {
 				return index % 2;
