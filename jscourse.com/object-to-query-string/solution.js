@@ -1,13 +1,19 @@
 function objectToQueryString(object) {
 	var result = '';
-	var key;
+	var key, encodedKey, value;
 
 	for (key in object) {
+
+		// it's an important check, because in result will be
+		// properties and methods from object's prototype
 		if (!object.hasOwnProperty(key)) {
 			break;
 		}
 
-		result += encodeURIComponent(key) + '=' + encodeURIComponent(object[key]) + '&';
+		encodedKey = encodeURIComponent(key);
+		value = encodeURIComponent(object[key]);
+
+		result += encodedKey + '=' + value + '&';
 	}
 
 	return result.slice(0, result.length - 1);
