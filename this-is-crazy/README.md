@@ -10,6 +10,7 @@ Normally "this" in JavaScript ES5 can refer to:
 		// Node.js
 		// console.log(this === global); // true
 	}
+	contextA();
 </pre>
 
 * Object whose method is called
@@ -27,6 +28,7 @@ Normally "this" in JavaScript ES5 can refer to:
 			console.log(this.prop); // {x: 16, y: 128}
 		}
 	}
+	contextB.methodA();
 </pre>
 
 * New instance from constructor function
@@ -40,9 +42,8 @@ Normally "this" in JavaScript ES5 can refer to:
 			return {x: this.x, y: this.y};
 		};
 	};
-	// this === contextC;
-	// contextC.getPosition(); // {x: 64, y: 16}
-	var contextC = new Point(64, 16);
+	var contextC = new Point(64, 16); // this === contextC
+	contextC.getPosition(); // {x: 64, y: 16}
 </pre>
 
 But there are exclusions and those rules too breakable...
