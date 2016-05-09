@@ -33,11 +33,9 @@ function queryStringToObject(queryString) {
 
 	var handler = reduceFn && reduceFn.toString().indexOf('native') >= 0 ?
 		function() {
-			console.log('reduce');
 			return queryStringParts.reduce(assign, result);
 		} :
 		function() {
-			console.log('for');
 			// fallback for older browsers or if "reduce" was "monkey-patched"
 			for (var i = 0; i < queryStringParts.length; i++) {
 				assign(result, queryStringParts[i]);
