@@ -2,7 +2,7 @@
 
 Normally "this" in JavaScript ES5 can refer to:
 
-* Global object (window in browser, global in Node.js)
+* Global object (`window` in browser, `global` in Node.js)
 
 <pre>
 	function contextA() {
