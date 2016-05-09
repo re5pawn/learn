@@ -4,6 +4,7 @@
 Реализовать функцию `objectToQueryString(object)`, которая принимает аргументом объект,
 возвращает строку.
 Примеры работы:
+
 `objectToQueryString({user: 'Dmitry'}); // user=Dmitry`
 
 `objectToQueryString({user: 'Dmitry', password: 'pass'}); // user=Dmitry&password=pass`
