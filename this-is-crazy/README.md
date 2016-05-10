@@ -2,20 +2,20 @@
 
 Normally "this" in JavaScript ES5 can refer to:
 
-* Global object (`window` in browser, `global` in Node.js)
+##### 1. Global object (`window` in browser, `global` in Node.js)
 
-<pre>
+```js
 	function contextA() {
 		console.log(this === window); // true
 		// Node.js
 		// console.log(this === global); // true
 	}
 	contextA();
-</pre>
+```
 
-* Object whose method is called
+##### 2. Object whose method is called
 
-<pre>
+```js
 	var contextB = {
 		prop: {x: 16, y: 128},
 
@@ -29,11 +29,11 @@ Normally "this" in JavaScript ES5 can refer to:
 		}
 	}
 	contextB.methodA();
-</pre>
+```
 
-* New instance from constructor function
+##### 3. New instance from constructor function
 
-<pre>
+```js
 	var Point = function(x, y) {
 		this.x = x;
 		this.y = y;
@@ -44,7 +44,7 @@ Normally "this" in JavaScript ES5 can refer to:
 	};
 	var contextC = new Point(64, 16); // this === contextC
 	contextC.getPosition(); // {x: 64, y: 16}
-</pre>
+```
 
 But there are exclusions and those rules too breakable...
 To be continued.
