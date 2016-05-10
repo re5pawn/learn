@@ -46,5 +46,74 @@ Normally "this" in JavaScript ES5 can refer to:
 	contextC.getPosition(); // {x: 64, y: 16}
 ```
 
-But there are exclusions and those rules too breakable...
-To be continued.
+But there are exclusions and those rules too breakable.
+
+### Exclusions & issues
+
+* In __strict mode__ `this` doesn't refer to global object
+
+```js
+	'use strict';
+
+	function contextA() {
+		console.log(this === window); // false
+		console.log(this === undefined); // true
+
+		// Node.js
+		// console.log(this === global); // false
+		// console.log(this === undefined); // true
+	}
+	contextA();
+```
+
+* Implicit change of context
+
+```js
+	var contextB = {
+		methodA: function() {
+			console.log(this === contextB); // false
+			this.methodB(); // TypeError: this.methodB is not a function
+		},
+
+		methodB: function() {
+			console.log('methodB called');
+		}
+	}
+	var someFn = contextB.methodA;
+	someFn();
+```
+
+It will be because `methodA` called with a changed context,
+`this` will refer to global object (`window`/`global`) or `undefined` in a __strict mode__.
+
+```js
+	'use strict';
+
+	var contextB = {
+		methodA: function() {
+			console.log(this === contextB); // false
+			this.methodB(); // Cannot read property 'methodB' of undefined
+		},
+
+		methodB: function() {
+			console.log('methodB called');
+		}
+	}
+	var someFn = contextB.methodA;
+	someFn();
+```
+
+How solve this problem:
+
+```js
+	someFn.call(contextB); // all right!
+```
+or:
+```js
+	someFn.bind(contextB);
+	someFn(); // all right again!
+```
+[Function.prototype.call()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/call)
+[Function.prototype.bind()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/bind)
+
+To be continued...
