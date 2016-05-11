@@ -116,4 +116,36 @@ or:
 [Function.prototype.call()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/call)
 [Function.prototype.bind()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/bind)
 
+* Call constructor without "new"
+
+```js
+	var Point = function(x, y) {
+		this.x = x;
+		this.y = y;
+
+		this.getPosition = function() {
+			return {x: this.x, y: this.y};
+		};
+	};
+	var contextC = Point(64, 16); // this === global object
+	contextC.getPosition(); // Cannot read property 'getPosition' of undefined
+```
+
+Now, in global object assigned two properties (`x`, `y`) and a method (`getPosition`).
+It's very pity.
+
+How solve this problem:
+
+```js
+	var Point = function(x, y) {
+		if (!(this instanceof Point)) {
+			// "this" doesn't refer to new instance,
+			// call its correctly
+			return new Point(x, y);
+		}
+
+		// ...
+	};
+```
+
 To be continued...
