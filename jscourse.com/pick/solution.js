@@ -17,6 +17,7 @@ function pick(obj, keys) {
 			}, {});
 		} :
 		function() {
+			// fallback for older browsers or if "reduce" was "monkey-patched"
 			var result = {};
 			var i;
 
