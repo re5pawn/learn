@@ -5,8 +5,8 @@
 возвращает строку.
 Примеры работы:
 
-`objectToQueryString({user: 'Dmitry'}); // user=Dmitry`
-
-`objectToQueryString({user: 'Dmitry', password: 'pass'}); // user=Dmitry&password=pass`
-
-`objectToQueryString({user: 'Dmitry', password: 'pass', id: 1}); // user=Dmitry&password=pass&id=1`
+```js
+objectToQueryString({user: 'Dmitry'}); // user=Dmitry
+objectToQueryString({user: 'Dmitry', password: 'pass'}); // user=Dmitry&password=pass
+objectToQueryString({user: 'Dmitry', password: 'pass', id: 1}); // user=Dmitry&password=pass&id=1
+```

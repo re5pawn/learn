@@ -6,7 +6,7 @@
 Если в объекте `obj`, нет ключа, указанного в массиве `keys`, в результирующем объекте этот ключ не должен присутствовать.
 Пример работы:
 
-<pre>
+```js
 	var user = {
 	    name: 'Sergey',
 	    age: 30,
@@ -17,4 +17,4 @@
 	pick(user, ['name']); // {name: 'Sergey'}
 	pick(user, ['name', 'second-name']); // {name: 'Sergey'}
 	pick(user, ['name', 'friends']); // {name: 'Sergey', friends:['Sveta', 'Artem']}
-</pre>
+```

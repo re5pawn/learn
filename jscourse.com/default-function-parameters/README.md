@@ -7,8 +7,8 @@
 * Если `options` передан, то те ключи, которые переданы в объекте `options`, "перекрывают" ключи из `defaultOptions`,
   и результирующий объект содежит набор ключей-значений как из `options`, так и из `defaultOptions`.
 
-`someFunc(); // {index: 0, animate: false}`
-
-`someFunc({index: 20}); // {index: 20, animate: false}`
-
-`someFunc({index: 1, animate: true}); // {index: 1, animate: true}`
+```js
+someFunc(); // {index: 0, animate: false}
+someFunc({index: 20}); // {index: 20, animate: false}
+someFunc({index: 1, animate: true}); // {index: 1, animate: true}
+```

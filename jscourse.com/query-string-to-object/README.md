@@ -6,8 +6,8 @@
 Помни, что некоторые символы query string могут быть закодированы.
 Пример работы:
 
-`queryStringToObject("user=true"); // {user: true}`
-
-`queryStringToObject("user=true&age=29"); // {user: true, age: 29}`
-
-`queryStringToObject("user=true&age=29&name=Evgen"); // {user: true, age: 29, name: "Evgen"}`
+```js
+queryStringToObject("user=true"); // {user: true}
+queryStringToObject("user=true&age=29"); // {user: true, age: 29}
+queryStringToObject("user=true&age=29&name=Evgen"); // {user: true, age: 29, name: "Evgen"}
+```
