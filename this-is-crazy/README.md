@@ -6,11 +6,12 @@ Normally "this" in JavaScript ES5 can refer to:
 
 ```js
 	function contextA() {
-		console.log(this === window); // true
+		console.log(this === window); // (*)
 		// Node.js
-		// console.log(this === global); // true
+		// console.log(this === global); // (*)
 	}
 	contextA();
+	// (*) true
 ```
 
 ##### 2. Object whose method is called
@@ -20,15 +21,17 @@ Normally "this" in JavaScript ES5 can refer to:
 		prop: {x: 16, y: 128},
 
 		methodA: function() {
-			console.log(this === contextB); // true
+			console.log(this === contextB); // (*)
 			this.methodB();
 		},
 
 		methodB: function() {
-			console.log(this.prop); // {x: 16, y: 128}
+			console.log(this.prop); // (**)
 		}
 	}
 	contextB.methodA();
+	// (*) true
+	// (**) {x: 16, y: 128}
 ```
 
 ##### 3. New instance from constructor function
@@ -39,11 +42,12 @@ Normally "this" in JavaScript ES5 can refer to:
 		this.y = y;
 
 		this.getPosition = function() {
-			return {x: this.x, y: this.y};
+			return {x: this.x, y: this.y}; // (*)
 		};
 	};
 	var contextC = new Point(64, 16); // this === contextC
-	contextC.getPosition(); // {x: 64, y: 16}
+	contextC.getPosition();
+	// (*) {x: 64, y: 16}
 ```
 
 But there are exclusions and those rules too breakable.
@@ -56,14 +60,16 @@ But there are exclusions and those rules too breakable.
 	'use strict';
 
 	function contextA() {
-		console.log(this === window); // false
-		console.log(this === undefined); // true
+		console.log(this === window); // (*)
+		console.log(this === undefined); // (**)
 
 		// Node.js
-		// console.log(this === global); // false
-		// console.log(this === undefined); // true
+		// console.log(this === global); // (*)
+		// console.log(this === undefined); // (**)
 	}
 	contextA();
+	// (*) false
+	// (**) true
 ```
 
 * Implicit change of context
@@ -71,8 +77,8 @@ But there are exclusions and those rules too breakable.
 ```js
 	var contextB = {
 		methodA: function() {
-			console.log(this === contextB); // false
-			this.methodB(); // TypeError: this.methodB is not a function
+			console.log(this === contextB); // (*)
+			this.methodB(); // (**)
 		},
 
 		methodB: function() {
@@ -81,6 +87,8 @@ But there are exclusions and those rules too breakable.
 	}
 	var someFn = contextB.methodA;
 	someFn();
+	// (*) false
+	// (**) TypeError: this.methodB is not a function
 ```
 
 It will be because `methodA` called with a changed context,
@@ -91,8 +99,7 @@ It will be because `methodA` called with a changed context,
 
 	var contextB = {
 		methodA: function() {
-			console.log(this === contextB); // false
-			this.methodB(); // Cannot read property 'methodB' of undefined
+			this.methodB(); // (*)
 		},
 
 		methodB: function() {
@@ -101,6 +108,7 @@ It will be because `methodA` called with a changed context,
 	}
 	var someFn = contextB.methodA;
 	someFn();
+	// (*) Cannot read property 'methodB' of undefined
 ```
 
 How solve this problem:
@@ -124,11 +132,12 @@ or:
 		this.y = y;
 
 		this.getPosition = function() {
-			return {x: this.x, y: this.y};
+			return {x: this.x, y: this.y}; // (*)
 		};
 	};
 	var contextC = Point(64, 16); // this === global object
-	contextC.getPosition(); // Cannot read property 'getPosition' of undefined
+	contextC.getPosition();
+	// (*) Cannot read property 'getPosition' of undefined
 ```
 
 Now, in global object assigned two properties (`x`, `y`) and a method (`getPosition`).
