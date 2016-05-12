@@ -157,4 +157,28 @@ How solve this problem:
 	};
 ```
 
+* Incorrect "this" inside callback function
+
+```js
+	var Model = function(entityName) {
+		this.data = [];
+
+		this.getEntity = function(id) {
+			// there is ajax call...
+
+			setTimeout(function() {
+				this.data = [
+					{id: 123, prop: 'foo'},
+					{id: 456, prop: 'bar'},
+					{id: 789, prop: 'baz'}
+				];
+			}, 500);
+		};
+	}
+
+var users = new Model('users');
+users.getEntity();
+console.log(users.data); // []
+```
+
 To be continued...
