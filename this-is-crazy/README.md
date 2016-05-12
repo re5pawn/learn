@@ -181,4 +181,44 @@ users.getEntity();
 console.log(users.data); // []
 ```
 
-To be continued...
+So, in global object assigned an extra property `data`. It's very pity again.
+
+How solve this problem:
+
+```js
+	var Model = function(entityName) {
+		var self = this;
+		this.data = [];
+		
+		this.getEntity = function(id) {
+			// there is ajax call...
+
+			setTimeout(function() {
+				self.data = [
+					{id: 123, prop: 'foo'},
+					{id: 456, prop: 'bar'},
+					{id: 789, prop: 'baz'}
+				];
+			}, 500);
+		};
+	}
+```
+
+Just save correct context for use into callback.
+
+Or use `.bind(this)`:
+```js
+	this.getEntity = function(id) {
+			// there is ajax call...
+
+			setTimeout(function() {
+				this.data = [
+					{id: 123, prop: 'foo'},
+					{id: 456, prop: 'bar'},
+					{id: 789, prop: 'baz'}
+				];
+			}.bind(this), 500);
+		};
+```
+
+Those considered examples are most common and useful.
