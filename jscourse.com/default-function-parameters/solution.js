@@ -1,4 +1,6 @@
 function someFunc(options) {
+	'use strict';
+	
 	var defaultOptions = {
 		index: 0,
 		animate: false

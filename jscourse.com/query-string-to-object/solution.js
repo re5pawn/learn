@@ -1,4 +1,6 @@
 function queryStringToObject(queryString) {
+	'use strict';
+	
 	queryString = decodeURIComponent(queryString.trim());
 
 	if (!queryString.length) {

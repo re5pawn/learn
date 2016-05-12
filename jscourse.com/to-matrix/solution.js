@@ -1,4 +1,6 @@
 function toMatrix (data, rowSize) {
+	'use strict';
+
 	var reduceFn = Array.prototype.reduce;
 	var handler = reduceFn && reduceFn.toString().indexOf('native') >= 0 ?
 		function() {

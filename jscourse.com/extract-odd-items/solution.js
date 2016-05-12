@@ -1,4 +1,6 @@
 function extractOddItems(arr) {
+	'use strict';
+	
 	var filterFn = Array.prototype.filter;
 	var handler = filterFn && filterFn.toString().indexOf('native') >= 0 ?
 		function() {

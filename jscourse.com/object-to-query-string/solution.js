@@ -1,4 +1,6 @@
 function objectToQueryString(object) {
+	'use strict';
+	
 	var result = '';
 	var key, encodedKey, value;
 

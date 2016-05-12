@@ -1,4 +1,6 @@
 function sumOnly100Plus(arr) {
+	'use strict';
+
 	var reduceFn = Array.prototype.reduce;
 	var handler = reduceFn && reduceFn.toString().indexOf('native') >= 0 ?
 		function() {

@@ -1,4 +1,6 @@
 function sum() {
+	'use strict';
+	
 	var reduceFn = Array.prototype.reduce;
 	var args = Array.prototype.slice.call(arguments, 0);
 	var handler = reduceFn && reduceFn.toString().indexOf('native') >= 0 ?
