@@ -19,9 +19,10 @@ function pick(obj, keys) {
 		function() {
 			// fallback for older browsers or if "reduce" was "monkey-patched"
 			var result = {};
+			var length = keys.length;
 			var i;
 
-			for (i = 0; i < keys.length; i++) {
+			for (i = 0; i < length; i++) {
 				assign(obj, result, keys[i]);
 			}
 

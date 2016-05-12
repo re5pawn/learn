@@ -4,13 +4,14 @@ function compose() {
 	var handler = forEachFn && forEachFn.toString().indexOf('native') >= 0 ?
 		function() {
 			fns.forEach(function(fn) {
-				fn();
+				if (typeof fn === 'function') { fn(); }
 			});
 		} :
 		function() {
+			var length = fns.length;
 			var i;
-			for (i = 0; i < fns.length; i++) {
-				fns[i]();
+			for (i = 0; i < length; i++) {
+				if (typeof fns[i] === 'function') { fns[i](); }
 			}
 		};
 

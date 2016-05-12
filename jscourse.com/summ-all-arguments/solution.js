@@ -10,9 +10,10 @@ function sum() {
 		function() {
 			// fallback for older browsers or if "reduce" was "monkey-patched"
 			var result = typeof args[0] === 'number' ? 0 : '';
+			var length = args.length;
 			var i;
 
-			for (i = 0; i < args.length; i++) {
+			for (i = 0; i < length; i++) {
 				result += args[i];
 			}
 

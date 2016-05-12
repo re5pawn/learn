@@ -37,7 +37,10 @@ function queryStringToObject(queryString) {
 		} :
 		function() {
 			// fallback for older browsers or if "reduce" was "monkey-patched"
-			for (var i = 0; i < queryStringParts.length; i++) {
+			var length = queryStringParts.length;
+			var i;
+			
+			for (i = 0; i < length; i++) {
 				assign(result, queryStringParts[i]);
 			}
 

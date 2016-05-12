@@ -9,9 +9,10 @@ function extractOddItems(arr) {
 		function() {
 			// fallback for older browsers or if "filter" was "monkey-patched"
 			var result = [];
+			var length = arr.length;
 			var i;
 
-			for (i = 1; i < arr.length; i += 2) {
+			for (i = 1; i < length; i += 2) {
 				result.push(arr[i]);
 			}
 

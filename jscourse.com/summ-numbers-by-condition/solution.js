@@ -10,9 +10,10 @@ function sumOnly100Plus(arr) {
 		function() {
 			// fallback for older browsers or if "reduce" was "monkey-patched"
 			var result = 0;
+			var length = arr.length;
 			var i;
 
-			for (i = 0; i < arr.length; i++) {
+			for (i = 0; i < length; i++) {
 				if (typeof arr[i] === 'number' && arr[i] > 100) {
 					result += arr[i];
 				}

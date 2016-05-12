@@ -12,9 +12,10 @@ function toMatrix (data, rowSize) {
 		function() {
 			// fallback for older browsers or if "reduce" was "monkey-patched"
 			var result = [];
+			var length = data.length;
 			var i;
 
-			for(i = 0; i < data.length; i += rowSize) {
+			for(i = 0; i < length; i += rowSize) {
 				result.push(data.slice(i, i + rowSize));
 			}
 
