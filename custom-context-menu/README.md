@@ -1,4 +1,4 @@
-## Реализовать кастомное контекстное меню.
+## Реализовать кастомное контекстное меню
 
 [My result on jsfiddle](https://jsfiddle.net/re5pawn/98kkecvt/)
 
