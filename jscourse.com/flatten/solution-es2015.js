@@ -1,7 +1,7 @@
 function flatten(array) {
 	return array.reduce((result, elem) => {
 		if (Array.isArray(elem)) {
-			flatten(elem).forEach(e => result.push(e));
+			result = result.concat(flatten(elem));
 		} else {
 			result.push(elem);
 		}
