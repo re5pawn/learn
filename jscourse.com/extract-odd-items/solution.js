@@ -1,25 +1,18 @@
 function extractOddItems(arr) {
 	'use strict';
+
+	return arr.filter(function(elem, index) {
+		return index % 2;
+	});
 	
-	var filterFn = Array.prototype.filter;
-	var handler = filterFn && filterFn.toString().indexOf('native') >= 0 ?
-		function() {
-			return arr.filter(function(elem, index) {
-				return index % 2;
-			});
-		} :
-		function() {
-			// fallback for older browsers or if "filter" was "monkey-patched"
-			var result = [];
-			var length = arr.length;
-			var i;
+	// or for older browsers
+	// var result = [];
+	// var length = arr.length;
+	// var i;
 
-			for (i = 1; i < length; i += 2) {
-				result.push(arr[i]);
-			}
+	// for (i = 1; i < length; i += 2) {
+	// 	result.push(arr[i]);
+	// }
 
-			return result;
-		};
-
-	return handler();
+	// return result;
 }

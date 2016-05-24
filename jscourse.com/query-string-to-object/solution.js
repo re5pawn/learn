@@ -28,26 +28,19 @@ function queryStringToObject(queryString) {
 		
 		return targetObject;
 	};
-
+	
 	var queryStringParts = queryString.split('&');
-	var result = {};
-	var reduceFn = Array.prototype.reduce;
 
-	var handler = reduceFn && reduceFn.toString().indexOf('native') >= 0 ?
-		function() {
-			return queryStringParts.reduce(assign, result);
-		} :
-		function() {
-			// fallback for older browsers or if "reduce" was "monkey-patched"
-			var length = queryStringParts.length;
-			var i;
-			
-			for (i = 0; i < length; i++) {
-				assign(result, queryStringParts[i]);
-			}
+	return queryStringParts.reduce(assign, {});
 
-			return result;
-		};
+	// or for older browsers
+	// var result = {};
+	// var length = queryStringParts.length;
+	// var i;
+	
+	// for (i = 0; i < length; i++) {
+	// 	assign(result, queryStringParts[i]);
+	// }
 
-	return handler();
+	// return result;
 }

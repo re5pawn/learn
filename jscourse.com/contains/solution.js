@@ -5,24 +5,19 @@ function contains(where, what) {
 		return true;
 	}
 
-	var everyFn = Array.prototype.every;
-	var handler = everyFn && everyFn.toString().indexOf('native') >= 0 ?
-		function() {
-			return what.every(function(item) {
-				return where.indexOf(item) >= 0;
-			});
-		} :
-		function() {
-			// fallback for older browsers or if "every" was "monkey-patched"
-			var length = what.length;
-			var i;
+	return what.every(function(item) {
+		return where.indexOf(item) >= 0;
+	});
 
-			for (i = 0; i < length; i++) {
-				if (where.indexOf(what[i]) < 0) {
-					return false;
-				}
-			}
+	// or for older browsers
+	// var length = what.length;
+	// var i;
+	
+	// for (i = 0; i < length; i++) {
+	// 	if (where.indexOf(what[i]) < 0) {
+	// 		return false;
+	// 	}
+	// }
 
-			return true;
-		}
+	// return true;
 }

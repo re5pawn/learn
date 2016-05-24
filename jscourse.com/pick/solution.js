@@ -9,25 +9,18 @@ function pick(obj, keys) {
 		return targetObj;
 	};
 
-	var reduceFn = Array.prototype.reduce;
-	var handler = reduceFn && reduceFn.toString().indexOf('native') >= 0 ?
-		function() {
-			return keys.reduce(function(result, key) {
-				return assign(obj, result, key);
-			}, {});
-		} :
-		function() {
-			// fallback for older browsers or if "reduce" was "monkey-patched"
-			var result = {};
-			var length = keys.length;
-			var i;
+	return keys.reduce(function(result, key) {
+		return assign(obj, result, key);
+	}, {});
 
-			for (i = 0; i < length; i++) {
-				assign(obj, result, keys[i]);
-			}
+	// or for older browsers
+	// var result = {};
+	// var length = keys.length;
+	// var i;
 
-			return result;
-		};
+	// for (i = 0; i < length; i++) {
+	// 	assign(obj, result, keys[i]);
+	// }
 
-		return handler();
+	// return result;
 }

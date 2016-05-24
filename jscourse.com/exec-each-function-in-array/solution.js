@@ -1,26 +1,18 @@
 function execFunctions(arrOfFunctions) {
 	'use strict';
 
-	var mapFn = Array.prototype.map;
-	var handler = mapFn && mapFn.toString().indexOf('native') >= 0 ?
-		function() {
-			console.log('map');
-			return arrOfFunctions.map(function(fn) {
-				return fn();
-			});
-		} :
-		function() {
-			console.log('for');
-			var result = [];
-			var length = arrOfFunctions.length;
-			var i;
+	return arrOfFunctions.map(function(fn) {
+		return fn();
+	});
 
-			for (i = 0; i < length; i++) {
-				result.push(arrOfFunctions[i]());
-			}
+	// or for older browsers
+	// var result = [];
+	// var length = arrOfFunctions.length;
+	// var i;
 
-			return result;
-		}
+	// for (i = 0; i < length; i++) {
+	// 	result.push(arrOfFunctions[i]());
+	// }
 
-	return handler();
+	// return result;
 }

@@ -18,8 +18,8 @@ function findLongestPalindrome(stringToSearchIn) {
 		return str;
 	};
 
-	var length = str.length;
 	var result = '';
+	var length = str.length;
 	var i, test;
 
 	for (i = 0; i < length; i++) {
