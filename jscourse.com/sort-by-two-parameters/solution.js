@@ -1,4 +1,6 @@
 function sort(items) {
+	'use strict';
+
 	items
 		.sort(function(a) {
 			return a.active ? -1 : 1;

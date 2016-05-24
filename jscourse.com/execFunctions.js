@@ -1,5 +1,7 @@
 function execFunctions(arrOfFunctions) {
-  return arrOfFunctions.map(function(fn) {
-    return fn();
-  });
+	'use strict';
+	
+	return arrOfFunctions.map(function(fn) {
+		return fn();
+	});
 }

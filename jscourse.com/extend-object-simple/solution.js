@@ -1,4 +1,6 @@
 function extend(obj1, obj2) {
+	'use strict';
+	
 	var key;
 	
 	for (key in obj2) {
