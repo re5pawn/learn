@@ -14,10 +14,10 @@ function contains(where, what) {
 		} :
 		function() {
 			// fallback for older browsers or if "every" was "monkey-patched"
-			var i = 0;
 			var length = what.length;
+			var i;
 
-			for (i; i < length; i++) {
+			for (i = 0; i < length; i++) {
 				if (where.indexOf(what[i]) < 0) {
 					return false;
 				}
