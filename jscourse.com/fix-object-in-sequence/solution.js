@@ -1,4 +1,6 @@
 function fixStruct(struct) {
+	'use strict';
+	
 	// we don't need the first and the last element
 	var i = 1;
 	var length = struct.length - 1;
