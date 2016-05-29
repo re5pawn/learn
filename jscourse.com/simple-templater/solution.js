@@ -1,4 +1,6 @@
 function templater(templateString, dataObj) {
+	'use strict';
+
 	var startIdx, endChar, re, key;
 
 	for (key in dataObj) {

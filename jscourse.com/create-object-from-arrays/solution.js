@@ -1,4 +1,6 @@
 function createObject(arrOfKeys, arrOfData) {
+	'use strict';
+
 	return arrOfKeys.reduce(function(result, key, idx) {
 		result[key] = arrOfData[idx];
 		return result;
