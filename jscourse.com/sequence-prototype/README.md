@@ -11,13 +11,13 @@
 Пример работы:
 
 ```js
-	var s1 = new Sequence(['one', 'two', 'three'])
-	s1.go(2);  // 'three'
-	s1.next(); // 'one'
-	s1.next(); // 'two'
+var s1 = new Sequence(['one', 'two', 'three'])
+s1.go(2);  // 'three'
+s1.next(); // 'one'
+s1.next(); // 'two'
 
-	var s2 = new Sequence([{name: 'Manya'}, {name:'Valya'}]);
-	s2.go(100500); // {name: 'Valya'} последний элемент, так как индекс выходит за границы максимального
-	s2.prev(); // {name: 'Manya'}
-	s2.prev(); // {name: 'Valya'}
+var s2 = new Sequence([{name: 'Manya'}, {name:'Valya'}]);
+s2.go(100500); // {name: 'Valya'} последний элемент, так как индекс выходит за границы максимального
+s2.prev(); // {name: 'Manya'}
+s2.prev(); // {name: 'Valya'}
 ```

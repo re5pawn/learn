@@ -7,11 +7,11 @@
 Пример работы:
 
 ```js
-	function someFunc() {
-	    var args = toArray(arguments);
-	    console.log(arguments.forEach); // undefined, метод есть только у массивов.
-	    console.log(args.forEach); // [function], метод есть только у массивов.
-	}
+function someFunc() {
+    var args = toArray(arguments);
+    console.log(arguments.forEach); // undefined, метод есть только у массивов.
+    console.log(args.forEach); // [function], метод есть только у массивов.
+}
 
-	someFunc(1,2,3,4);
+someFunc(1,2,3,4);
 ```

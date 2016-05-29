@@ -6,15 +6,15 @@
 Пример работы:
 
 ```js
-	function return10() {
-	  return 10;
-	}
+function return10() {
+  return 10;
+}
 
-	function returnUser() {
-	  return {name: "Evgen"};
-	}
+function returnUser() {
+  return {name: "Evgen"};
+}
 
-	function empty() {}
+function empty() {}
 
-	execFunctions([return10, returnUser, empty]); // [10, {name: "Evgen"}, undefined]
+execFunctions([return10, returnUser, empty]); // [10, {name: "Evgen"}, undefined]
 ```

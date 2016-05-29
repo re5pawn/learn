@@ -8,6 +8,6 @@
 Примеры:
 
 ```js
-	flatten([1, 2, 3, [1, 2, 3]]); // [1, 2, 3, 1, 2, 3]
-	flatten(['mama', ['mila'], [], [['ramu']]]); // ['mama', 'mila', 'ramu']
+flatten([1, 2, 3, [1, 2, 3]]); // [1, 2, 3, 1, 2, 3]
+flatten(['mama', ['mila'], [], [['ramu']]]); // ['mama', 'mila', 'ramu']
 ```

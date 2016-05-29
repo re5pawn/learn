@@ -5,7 +5,7 @@
 Примеры путей:
 
 ```js
-	'/users/dmitry/Dropbox/'
-	'/users/dmitry/Dropbox'
-	'/users/dmitry/Dropbox/main.js'
+'/users/dmitry/Dropbox/'
+'/users/dmitry/Dropbox'
+'/users/dmitry/Dropbox/main.js'
 ```

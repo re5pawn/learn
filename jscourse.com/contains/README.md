@@ -6,6 +6,6 @@
 Примеры:
 
 ```js
-	contains([1,2,3], [3,2]); // true
-	contains([1,2,3], [3,2,1,2,3]); // true
+contains([1,2,3], [3,2]); // true
+contains([1,2,3], [3,2,1,2,3]); // true
 ```

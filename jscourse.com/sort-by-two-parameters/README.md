@@ -9,42 +9,42 @@
 Пример:
 
 ```js
-	var items = [{
-	    active: false,
-	    value: 3
-	}, {
-	    active: false,
-	    value: 1
-	}, {
-	    active: true,
-	    value: 2
-	}, {
-	    active: false,
-	    value: 2
-	}, {
-	    active: true,
-	    value: 1
-	}];
+var items = [{
+    active: false,
+    value: 3
+}, {
+    active: false,
+    value: 1
+}, {
+    active: true,
+    value: 2
+}, {
+    active: false,
+    value: 2
+}, {
+    active: true,
+    value: 1
+}];
 
-	sort(items);
-	console.log(items);
+sort(items);
+console.log(items);
 
-	/*
-	[{
-	    active: true,
-	    value: 1
-	}, {
-	    active: true,
-	    value: 2
-	}, {
-	    active: false,
-	    value: 1
-	}, {
-	    active: false,
-	    value: 2
-	}, {
-	    active: false,
-	    value: 3
-	}]
-	*/
+/*
+[{
+    active: true,
+    value: 1
+}, {
+    active: true,
+    value: 2
+}, {
+    active: false,
+    value: 1
+}, {
+    active: false,
+    value: 2
+}, {
+    active: false,
+    value: 3
+}]
+*/
 ```
