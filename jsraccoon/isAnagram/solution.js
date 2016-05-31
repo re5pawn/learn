@@ -7,7 +7,7 @@ function isAnagram(wordA, wordB) {
 		return str.split('').sort().join('');
 	}
 
-	if (a === b) { return false };
+	if (a === b) { return false; };
 
 	return sort(a) === sort(b);
 }
