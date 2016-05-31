@@ -1,4 +1,6 @@
 function observable(obj) {
+	'use strict';
+	
 	var observers = {};
 
 	var removeHandler = function(eventName, idx) {
