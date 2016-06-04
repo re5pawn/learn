@@ -1,11 +1,12 @@
 function isInArray(arr) {
 	'use strict';
 
-	var args = Array.prototype.slice.call(arguments, 1);
+	return Array.prototype.every.call(arguments, function(a) {
+                // skip "arr" in 1st iteration
+                if (a === arr) { return true; }
 
-	return args.every(function(a) {
-		return arr.indexOf(a) >= 0;
-	});
+                return arr.indexOf(a) >= 0;
+        });
 
 	// or for older browsers
 	// var length = args.length;
