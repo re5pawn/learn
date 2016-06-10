@@ -11,3 +11,5 @@ console.log(u[0] === a); // true
 console.log(u[1] === b); // true
 console.log(u.length === 2); // true
 ```
+
+<iframe src='https://glot.io/snippets/efhwb6r2zx/embed' frameborder='0' scrolling='no' sandbox='allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts' width='600' height='400'></iframe>
