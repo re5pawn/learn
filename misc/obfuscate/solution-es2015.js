@@ -11,10 +11,8 @@ const obfuscate = (data) => {
 			.toString().split('').map(sym => dict[parseInt(sym, 10)]).join('');
 	};
 
-	const isExist = (what, where) => what in where;
-
 	return data.reduce((result, className) => {
-		result[className] = isExist(className, result) ? result[className] : obfus();
+		result[className] = className in result ? result[className] : obfus();
 		return result;
 	}, {});
 };
