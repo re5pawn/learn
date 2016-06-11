@@ -13,8 +13,8 @@ body {
 
 .contextmenu-area {
 	display: inline-block;
-	padding: 30px 0;
-	margin: 50px;
+	padding: 30px 40px;
+	margin: 50px 0;
 	color: #777;
 	cursor: pointer;
 	border-radius: 5px;
