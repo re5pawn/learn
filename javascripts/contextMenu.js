@@ -36,8 +36,8 @@
       parentNode.appendChild(this._createContextMenuNode('contextmenu'));
 
       document.querySelector('.contextmenu').style.display = 'block';
-      document.querySelector('.contextmenu').style.top = event.clientY + 'px';
-      document.querySelector('.contextmenu').style.left = event.clientX + 'px';
+      document.querySelector('.contextmenu').style.top = event.pageY + 'px';
+      document.querySelector('.contextmenu').style.left = event.pageX + 'px';
     }
   };
 
