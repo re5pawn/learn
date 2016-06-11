@@ -1,5 +1,5 @@
 (function() {
-  var firstMenuStructure = [{
+  var menuStructure = [{
     title: 'File',
     action: function() {
       alert('open file');
@@ -31,24 +31,6 @@
       }]
     }]
   }];
-      
-  var secondMenuStructure = [{
-    title: 'File',
-    action: function() {
-      alert('open file');
-    }
-  }, {
-    title: 'Edit',
-    action: function() {
-      alert('edit content');
-    }
-  }, {
-    title: 'Close',
-    action: function() {
-      alert('closed');
-    }
-  }];
 
-  var cmForArea = new ContextMenu('.contextmenu-area', firstMenuStructure);
-  var cmForBody = new ContextMenu('body', secondMenuStructure);
+  var cmForArea = new ContextMenu('.contextmenu-area', menuStructure);
 })();
