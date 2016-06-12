@@ -35,9 +35,10 @@
     if (className === this.parentNodeSelector || tagName === this.parentNodeSelector) {
       parentNode.appendChild(this._createContextMenuNode('contextmenu'));
 
-      document.querySelector('.contextmenu').style.display = 'block';
-      document.querySelector('.contextmenu').style.top = event.pageY + 'px';
-      document.querySelector('.contextmenu').style.left = event.pageX + 'px';
+      var cm = document.querySelector('.contextmenu');
+      cm.style.display = 'block';
+      cm.style.top = event.pageY + 'px';
+      cm.style.left = event.pageX + 'px';
     }
   };
 
