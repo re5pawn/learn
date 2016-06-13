@@ -1,4 +1,4 @@
-## reverse integer
+## Reverse integer
 
 Реализуйте функцию `reverseInt`, которая переворачивает цифры в переданном числе:
 
