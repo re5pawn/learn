@@ -3,7 +3,7 @@
 type IEventListener = (event, ...args: any[]) => void;
 type BoolOrErr = boolean | Error;
 
-export interface IGtEventEmitterService {
+export interface INgEventEmitterService {
 	On(eventName: string, fn: IEventListener, isOnetime?: boolean): Function;
 	Off(eventName: string, fn: IEventListener, isOnetime?: boolean): BoolOrErr;
 	Once(eventName: string, fn: IEventListener): void;
@@ -19,7 +19,7 @@ interface IEvent extends IOnetimeEvent {
 	fn: IEventListener;
 }
 
-class GtEventEmitterService implements IGtEventEmitterService {
+class NgEventEmitterService implements INgEventEmitterService {
 
 	constructor(private $rootScope) {}
 
