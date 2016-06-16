@@ -1,10 +1,11 @@
 'use strict';
 
 type IEventListener = (event, ...args: any[]) => void;
+type BoolOrErr = boolean | Error;
 
 export interface IGtEventEmitterService {
 	On(eventName: string, fn: IEventListener, isOnetime?: boolean): Function;
-	Off(eventName: string, fn: IEventListener, isOnetime?: boolean): boolean | Error;
+	Off(eventName: string, fn: IEventListener, isOnetime?: boolean): BoolOrErr;
 	Once(eventName: string, fn: IEventListener): void;
 	Emit(eventName: string, data: any | any[]): void;
 }
@@ -39,13 +40,13 @@ class GtEventEmitterService implements IGtEventEmitterService {
 		return deregFn;
 	}
 
-	public Off(eventName: string, fn: IEventListener, isOnetime?: boolean): boolean | Error {
+	public Off(eventName: string, fn: IEventListener, isOnetime?: boolean): BoolOrErr {
 		let event = this.events.filter(e => e.eventName === eventName && e.fn === fn);
 
 		return event.length ? this.off(event[0], isOnetime ? this.onetimeEvents : this.events) : false;
 	}
 
-	private off(event: IEvent | IOnetimeEvent, store: IEvent[] | IOnetimeEvent[]): boolean | Error {
+	private off(event: IEvent | IOnetimeEvent, store: IEvent[] | IOnetimeEvent[]): BoolOrErr {
 		try {
 			event.deregFn();
 			store.splice(store.indexOf(<any>event), 1);
