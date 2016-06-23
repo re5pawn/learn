@@ -10,9 +10,13 @@ function MyPromise(fnAsync) {
 	var resolved = function(d) {
 		data = d;
 
-		return resolvers.reduce(function(result, resolve) {
+		var reducedResult = resolvers.reduce(function(result, resolve) {
 			return resolve(result);
 		}, data);
+
+		resolvers.length = 0;
+
+		return reducedResult;
 	};
 
 	var rejected = function(err) {
@@ -29,6 +33,10 @@ function MyPromise(fnAsync) {
 			resolvers.push(fn);
 		}
 		console.log('resolvers list:', resolvers);
+
+		if (data) {
+			setTimeout(() => resolved(data), 0);
+		}
 
 		return this;
 	}
