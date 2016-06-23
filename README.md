@@ -7,4 +7,4 @@ Some code from exercises, tests and quizzes
 * React Challenge: Sort and search from [Frontend Raccoon](http://jsraccoon.ru/react-challenge-sort-and-search) - [link to solution](https://github.com/re5pawn/react-challenge-sort-and-search)
 * Exercises from [Frontend Raccoon](http://jsraccoon.ru/type/exercise) - [link to solutions](/jsraccoon)
 * Misc tasks - [link to solutions](/misc)
-* Tricky tricks [ES2015](/es2015-tricks) [ES5](/js-tricks)
+* JS tricky tricks - [ES2015](/es2015-tricks) | [ES5](/js-tricks)
