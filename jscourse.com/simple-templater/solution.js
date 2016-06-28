@@ -1,12 +1,12 @@
 function templater(templateString, dataObj) {
-	'use strict';
+  'use strict';
 
-	var key, re;
+  var key, re;
 
-	for (key in dataObj) {
-		re = new RegExp('\\${' + key + '}', 'g'); // /\${key}/g
-		templateString = templateString.replace(re, dataObj[key]);
-	}
+  for (key in dataObj) {
+    re = new RegExp('\\${' + key + '}', 'g'); // /\${key}/g
+    templateString = templateString.replace(re, dataObj[key]);
+  }
 
-	return templateString;
+  return templateString;
 }

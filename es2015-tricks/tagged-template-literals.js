@@ -1,6 +1,6 @@
 const foo = (strings, ...values) => {
-	console.log(strings);
-	console.log(values);
+  console.log(strings);
+  console.log(values);
 };
 
 let desc = 'awesome';

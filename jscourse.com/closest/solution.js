@@ -1,9 +1,9 @@
 function closest(node, testFunc) {
-	'use strict';
+  'use strict';
 
-	if (node === document.body && !testFunc(node)) {
-		return null;
-	}
+  if (node === document.body && !testFunc(node)) {
+    return null;
+  }
 
-	return testFunc(node) ? node : closest(node.parentElement, testFunc);
+  return testFunc(node) ? node : closest(node.parentElement, testFunc);
 }

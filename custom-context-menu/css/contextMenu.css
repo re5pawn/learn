@@ -1,75 +1,75 @@
 * {
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
-	transition: all 0.2s;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  transition: all 0.2s;
 }
 
 body {
-	font-family: 'Trebuchet MS', sans-serif;
-	font-size: 16px;
-	height: 100vh;
+  font-family: 'Trebuchet MS', sans-serif;
+  font-size: 16px;
+  height: 100vh;
 }
 
 .contextmenu-area {
-	display: inline-block;
-	padding: 30px 40px;
-	margin: 50px;
-	color: #777;
-	cursor: pointer;
-	border-radius: 5px;
-	border: 2px dashed #ccc;
+  display: inline-block;
+  padding: 30px 40px;
+  margin: 50px;
+  color: #777;
+  cursor: pointer;
+  border-radius: 5px;
+  border: 2px dashed #ccc;
 }
 
 .contextmenu {
-	font-size: 0.8em;
-	width: 200px;
-	position: absolute;
-	display: none;
+  font-size: 0.8em;
+  width: 200px;
+  position: absolute;
+  display: none;
 
-	top: 0;
-	left: 0;
+  top: 0;
+  left: 0;
 }
 
 .submenu {
-	width: 100%;
-	display: none;
-	position: absolute;
-	top: 28px;
-	right: 0;
+  width: 100%;
+  display: none;
+  position: absolute;
+  top: 28px;
+  right: 0;
 }
 
 .contextmenu li,
 .submenu li {
-	list-style: none;
-	cursor: pointer;
-	height: 28px;
-	color: #f5f5f5;
-	background: #2980B9;
-	padding: 5px 20px 5px 10px;
-	border-bottom: 2px solid #2C3E50;
+  list-style: none;
+  cursor: pointer;
+  height: 28px;
+  color: #f5f5f5;
+  background: #2980B9;
+  padding: 5px 20px 5px 10px;
+  border-bottom: 2px solid #2C3E50;
 }
 
 .submenu li {
-	background: #2C3E50;
-	text-align: right;
+  background: #2C3E50;
+  text-align: right;
 }
 
 .contextmenu li:hover,
 .submenu li:hover {
-	background: #1ABC9C;
-	border-bottom: 2px solid #2ECC71;
+  background: #1ABC9C;
+  border-bottom: 2px solid #2ECC71;
 }
 
 .has-submenu {
-	position: relative;
+  position: relative;
 }
 
 .has-submenu:after {
-	content: "\21B4";
-	display: block;
-	color: #E5E5E5;
-	position: absolute;
-	top: 5px;
-	right: 10px;
+  content: "\21B4";
+  display: block;
+  color: #E5E5E5;
+  position: absolute;
+  top: 5px;
+  right: 10px;
 }

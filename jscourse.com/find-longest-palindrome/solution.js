@@ -1,34 +1,34 @@
 function findLongestPalindrome(stringToSearchIn) {
-	'use strict';
+  'use strict';
 
-	var isPalindrome = function(test) {
-		test = test.toLowerCase();
-		return test === test.split('').reverse().join('');
-	}
+  var isPalindrome = function(test) {
+    test = test.toLowerCase();
+    return test === test.split('').reverse().join('');
+  }
 
-	var str = stringToSearchIn
-		.toLowerCase()
-		.split('')
-		.filter(function(char) {
-			return char !== ' ';
-		})
-		.join('');
+  var str = stringToSearchIn
+    .toLowerCase()
+    .split('')
+    .filter(function(char) {
+      return char !== ' ';
+    })
+    .join('');
 
-	if (isPalindrome(str)) {
-		return str;
-	};
+  if (isPalindrome(str)) {
+    return str;
+  };
 
-	var result = '';
-	var length = str.length;
-	var i, test;
+  var result = '';
+  var length = str.length;
+  var i, test;
 
-	for (i = 0; i < length; i++) {
-		test = str.slice(0, i + 1);
+  for (i = 0; i < length; i++) {
+    test = str.slice(0, i + 1);
 
-		if (isPalindrome(test)) {
-			result = test.length > result.length ? test : result;
-		}
-	}
+    if (isPalindrome(test)) {
+      result = test.length > result.length ? test : result;
+    }
+  }
 
-	return result;
+  return result;
 }

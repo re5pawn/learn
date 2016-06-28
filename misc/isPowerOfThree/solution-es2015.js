@@ -1,7 +1,7 @@
 const isPowerOfThree = (num) => {
-	while (num / 3 >= 1) {
-		num /= 3;
-	}
+  while (num / 3 >= 1) {
+    num /= 3;
+  }
 
-	return num === 1;
+  return num === 1;
 }

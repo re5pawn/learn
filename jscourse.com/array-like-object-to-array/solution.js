@@ -1,5 +1,5 @@
 function toArray(obj) {
-	'use strict';
+  'use strict';
 
-	return Array.prototype.slice.call(obj);
+  return Array.prototype.slice.call(obj);
 }

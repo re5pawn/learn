@@ -1,12 +1,12 @@
 function once(fn, context) {
-	var result;
+  var result;
 
-	return function() {
-		result = fn && fn.apply(context || this, arguments);
-		fn = null;
+  return function() {
+    result = fn && fn.apply(context || this, arguments);
+    fn = null;
 
-		return result;
-	}
+    return result;
+  }
 }
 
 var callOnce = once(function(a, b) { return a + b; });
