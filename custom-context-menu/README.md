@@ -1,6 +1,6 @@
 ## Реализовать кастомное контекстное меню
 
-[My result on jsfiddle](https://jsfiddle.net/re5pawn/98kkecvt/)
+[Решение на jsfiddle](https://jsfiddle.net/re5pawn/98kkecvt/)
 
 * Для инициализации и создания компонент получает:
   - css-селектор на котором будет работать
