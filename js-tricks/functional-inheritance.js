@@ -1,32 +1,49 @@
 // some base class
-function Machine() {
+var Machine = (function() {
+  // private property
   var enabled = false;
 
-  this.enable = function() {
-    enabled = true;
-  };
+  function Machine() {
+    this.enable = function() {
+      enabled = true;
+    };
 
-  this.disable = function() {
-    enabled = false;
-  };
-}
+    this.disable = function() {
+      enabled = false;
+    };
+  }
 
-function CoffeeMachine(power) {
-  // inherit
-  Machine.call(this);
-  // or
-  //Machine.apply(this, arguments);
+  Machine.prototype.getState = function() {
+    return enabled;
+  }
 
-  var waterAmount = 0;
+  return Machine;
+})();
 
-  this.setWaterAmount = function(amount) {
-    waterAmount = amount;
-  };
+var CoffeeMachine = (function() {
+  function CoffeeMachine(power) {
+    // inherit
+    Machine.call(this);
+    // or
+    // Machine.apply(this, arguments);
 
-}
+    var waterAmount = 0;
+    this.setWaterAmount = function(amount) {
+      waterAmount = amount;
+    };
+  }
+
+  // If parent's mathods are in the prototype
+  // for get access to them:
+  CoffeeMachine.prototype = Object.create(Machine.prototype);
+  CoffeeMachine.prototype.constructor = Machine;
+
+  return CoffeeMachine;
+})();
 
 var coffeeMachine = new CoffeeMachine(10000);
 
 coffeeMachine.enable(); // parent's method
 coffeeMachine.setWaterAmount(100);
 coffeeMachine.disable(); // parent's method
+coffeeMachine.getState(); // parent's prototype method
