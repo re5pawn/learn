@@ -7,6 +7,10 @@ function queryStringToObject(queryString) {
     return {};
   }
 
+  if (queryString.indexOf('?') >= 0) {
+    queryString = queryString.substring(queryString.indexOf('?') + 1);
+  }
+
   var assign = function(targetObject, queryStringPart) {
     var eqCharIdx = queryStringPart.indexOf('=');
     var key = queryStringPart.slice(0, eqCharIdx);
