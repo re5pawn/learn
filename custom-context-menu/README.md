@@ -1,6 +1,6 @@
 ## Реализовать кастомное контекстное меню
 
-[Решение на jsfiddle](https://jsfiddle.net/re5pawn/98kkecvt/)
+[Решение на jsfiddle](https://jsfiddle.net/re5pawn/98kkecvt/) | 
 [Demo](http://round-map.surge.sh/)
 
 * Для инициализации и создания компонент получает:
