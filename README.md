@@ -8,3 +8,4 @@ Notes about technlogies. Tricky tricks. Some code from exercises, tests and quiz
 * Exercises from [Frontend Raccoon](http://jsraccoon.ru/type/exercise) - [link to solutions](/jsraccoon)
 * Misc tasks - [link to solutions](/misc)
 * JS tricky tricks - [ES2015](/es2015-tricks) | [ES5](/js-tricks)
+* RxJS - [link](/rxjs)
