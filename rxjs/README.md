@@ -7,6 +7,10 @@ __Links:__
 
 * [RxMarbles](http://rxmarbles.com/) - visualization of Rx operators
 
+* Build an Angular 2 Instant Search Component - course by egghead.io. Learn more about using observables in Angular 2
+  - [Course](https://egghead.io/courses/build-an-angular-2-instant-search-component)
+  - [Repo](https://github.com/andela-osule/instant-search)
+
 __Samples:__
 
 * Stream from event
