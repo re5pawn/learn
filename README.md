@@ -1,5 +1,5 @@
 # Learn
-Some code from exercises, tests and quizzes
+Notes about technlogies. Tricky tricks. Some code from exercises, tests and quizzes.
 
 * Tasks from [jscourse.com](http://jscourse.com/tasks/) - [link to solutions](/jscourse.com)
 * Note about how "this" works in JavaScript - [this-is-crazy](/this-is-crazy)
@@ -8,3 +8,4 @@ Some code from exercises, tests and quizzes
 * Exercises from [Frontend Raccoon](http://jsraccoon.ru/type/exercise) - [link to solutions](/jsraccoon)
 * Misc tasks - [link to solutions](/misc)
 * JS tricky tricks - [ES2015](/es2015-tricks) | [ES5](/js-tricks)
+* RxJS - [link](/rxjs)
